@@ -1,3 +1,5 @@
 Flask==2.0.2
 tensorflow==2.8.0
-
+gunicorn
+google-generativeai
+pysqlite3
