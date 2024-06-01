@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workout Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>What's your workout plan?</h1>
+        <form action="/generate" method="post">
+            <label for="duration">Training Duration (mins):</label>
+            <input type="number" id="duration" name="duration" required>
+            <label>Choose Type of Workout:</label>
+            <button type="submit" name="workout_type" value="Running">Running</button>
+            <button type="submit" name="workout_type" value="Strength">Strength</button>
+            <button type="submit" name="workout_type" value="HIIT">HIIT</button>
+            <label>Choose Training Intensity:</label>
+            <button type="submit" name="intensity" value="Easy">Easy</button>
+            <button type="submit" name="intensity" value="Moderate">Moderate</button>
+            <button type="submit" name="intensity" value="Hard">Hard</button>
+        </form>
+    </div>
+</body>
+</html>

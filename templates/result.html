@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workout Plan Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Here is your workout plan for today!</h1>
+        <p>Consistency is key to a healthy lifestyle.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Phase</th>
+                    <th>Exercise</th>
+                    <th>Reps/Duration</th>
+                    <th>Sets</th>
+                    <th>Rest</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exercise in workout_plan %}
+                <tr>
+                    <td>{{ exercise.phase }}</td>
+                    <td>{{ exercise.exercise }}</td>
+                    <td>{{ exercise.reps or exercise.duration }}</td>
+                    <td>{{ exercise.sets }}</td>
+                    <td>{{ exercise.rest }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="/" method="get">
+            <button type="submit">Back</button>
+        </form>
+        <form action="/" method="get">
+            <button type="submit">End</button>
+        </form>
+    </div>
+</body>
+</html>
